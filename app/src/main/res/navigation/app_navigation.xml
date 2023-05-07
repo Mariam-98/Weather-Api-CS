@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/weatherMainPageFragment">
+
+    <fragment
+        android:id="@+id/weatherMainPageFragment"
+        android:name="com.example.weatherapics.WeatherMainPageFragment"
+        android:label="fragment_weather_main_page"
+        tools:layout="@layout/fragment_weather_main_page" />
+
+    <action
+        android:id="@+id/action_to_weatherDetailsFragment"
+        app:destination="@id/weatherDetailsFragment" />
+
+    <fragment
+        android:id="@+id/weatherDetailsFragment"
+        android:name="com.example.weatherapics.WeatherDetailsFragment"
+        android:label="fragment_weather_details"
+        tools:layout="@layout/fragment_weather_details">
+        <argument
+            android:name="result"
+            app:nullable="true"
+            app:argType="com.example.weatherapics.Result" />
+    </fragment>
+    <fragment
+        android:id="@+id/weatherWebViewFragment"
+        android:name="com.example.weatherapics.WeatherWebViewFragment"
+        android:label="fragment_weather_web_view"
+        tools:layout="@layout/fragment_weather_web_view">
+        <argument
+            android:name="result"
+            app:nullable="true"
+            app:argType="com.example.weatherapics.Result" />
+    </fragment>
+    <action
+        android:id="@+id/action_to_weatherWebViewFragment"
+        app:destination="@id/weatherWebViewFragment" />
+</navigation>
